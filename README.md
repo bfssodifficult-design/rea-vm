@@ -1,9 +1,56 @@
 # rea-vm
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![validate](https://github.com/bfssodifficult-design/rea-vm/actions/workflows/validate.yml/badge.svg)](https://github.com/bfssodifficult-design/rea-vm/actions/workflows/validate.yml)
+[![release](https://img.shields.io/github/v/release/bfssodifficult-design/rea-vm)](https://github.com/bfssodifficult-design/rea-vm/releases)
+
 `rea-vm` is the VM interface layer for REA. It gives an agent a controlled path
 from REA static analysis to an authorized virtual machine, dynamic evidence,
 IDA screenshots, and a structured report, without pretending that missing
 tools worked.
+
+## Why rea-vm
+
+- **One contract, four stages.** Static analysis, VM access, dynamic evidence,
+  and reporting stop being ad-hoc commands and become a repeatable pipeline.
+- **Honest capability checks.** Missing SSH, IDA, or PaperJSX is reported as
+  unavailable instead of being silently skipped or faked.
+- **Evidence, not vibes.** Every runtime claim is tied to a command, a hash, a
+  screenshot, or an explicit "unverified" label.
+
+## Quick start
+
+```bash
+git clone https://github.com/bfssodifficult-design/rea-vm.git
+cp -r rea-vm ~/.codex/skills/rea-vm
+python ~/.codex/skills/rea-vm/scripts/preflight_check.py --json
+```
+
+Then invoke `$rea-vm` in a Codex session. Start from
+`examples/example-config.yaml` and replace every placeholder.
+
+## Demo
+
+```text
+$ python scripts/preflight_check.py --json
+{"capabilities":[{"name":"rea","status":"supported"},
+                 {"name":"ssh","status":"supported"},
+                 {"name":"ida_mcp","status":"unavailable"},
+                 {"name":"paperjsx","status":"unavailable"}], ...}
+
+$ # REA static finding -> VM probe -> evidence -> report
+$ python scripts/preflight_check.py --config my-lab.yaml --json
+```
+
+A 60-second screen recording (REA -> VM -> IDA -> report) is planned under
+`docs/launch/`. Until then, the command transcript above is the honest demo.
+
+## Who it is for
+
+- Reverse engineers who already use REA and need a VM execution path.
+- Malware and detection engineers who must separate static claims from real
+  runtime observations.
+- Teams that want auditable evidence and reproducible VM experiments.
 
 ## Overview / 简介
 

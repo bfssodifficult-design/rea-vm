@@ -1,0 +1,22 @@
+name: Bug report
+description: Something in the skill or preflight is wrong
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the command and the observed output.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: OS / Python / REA version
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: I removed credentials and personal paths from this report.
+          required: true

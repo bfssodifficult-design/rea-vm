@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" fill="#0b1020"/>
+  <text x="80" y="150" fill="#e8eefc" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">rea-vm</text>
+  <text x="80" y="210" fill="#8fa3c8" font-family="Segoe UI, Arial, sans-serif" font-size="28">VM interface layer for REA</text>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#0b1020">
+    <rect x="80" y="300" width="240" height="90" rx="14" fill="#7dd3fc"/>
+    <text x="110" y="352">REA static</text>
+    <rect x="360" y="300" width="240" height="90" rx="14" fill="#a7f3d0"/>
+    <text x="390" y="352">Authorized VM</text>
+    <rect x="640" y="300" width="240" height="90" rx="14" fill="#fde68a"/>
+    <text x="670" y="352">Dynamic evidence</text>
+    <rect x="920" y="300" width="240" height="90" rx="14" fill="#fca5a5"/>
+    <text x="950" y="352">IDA + report</text>
+  </g>
+  <text x="80" y="500" fill="#8fa3c8" font-family="Segoe UI, Arial, sans-serif" font-size="24">capability preflight · graded evidence · honest degradation</text>
+  <text x="80" y="560" fill="#4f6285" font-family="Segoe UI, Arial, sans-serif" font-size="20">MIT · authorized and disposable environments only</text>
+</svg>

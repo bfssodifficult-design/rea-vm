@@ -1,0 +1,46 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile preflight
+        run: python -m py_compile scripts/preflight_check.py
+      - name: Validate skill structure
+        run: |
+          python - <<'PY'
+          import pathlib
+          import re
+          import sys
+
+          root = pathlib.Path('.')
+          skill = (root / 'SKILL.md').read_text(encoding='utf-8')
+          match = re.match(r'^---\n(.*?)\n---\n', skill, re.S)
+          if not match:
+              sys.exit('SKILL.md frontmatter missing')
+          name = re.search(r'^name:\s*(\S+)', match.group(1), re.M)
+          if not name or name.group(1) != 'rea-vm':
+              sys.exit('frontmatter name must be rea-vm')
+          for rel in re.findall(r'\]\(([^)]+\.md)\)', skill):
+              if not (root / rel).exists():
+                  sys.exit(f'missing reference: {rel}')
+          for rel in ['LICENSE', 'README.md', 'scripts/preflight_check.py']:
+              if not (root / rel).exists():
+                  sys.exit(f'missing file: {rel}')
+          print('skill structure ok')
+          PY
+      - name: Secret and PII scan
+        run: |
+          if grep -RInE 'gho_[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_|BEGIN (RSA|OPENSSH) PRIVATE KEY' \
+              --exclude-dir=.git .; then
+            echo "potential secret found"
+            exit 1
+          fi
