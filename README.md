@@ -5,6 +5,26 @@ from REA static analysis to an authorized virtual machine, dynamic evidence,
 IDA screenshots, and a structured report, without pretending that missing
 tools worked.
 
+## Overview / 简介
+
+**English** - `rea-vm` is the VM interface layer for REA. It connects REA
+static analysis to an authorized virtual machine, captures dynamic evidence
+and real IDA screenshots, and produces a graded report through PaperJSX or
+Markdown.
+
+**中文** - `rea-vm` 是 REA 的虚拟机接口层。它把 REA 静态分析接到授权的
+虚拟机上，采集动态证据和真实的 IDA 截图，并通过 PaperJSX 或 Markdown
+生成分级报告。
+
+**日本語** - `rea-vm` は REA の VM インターフェース層です。REA の静的解析を
+許可された仮想マシンに接続し、動的証拠と実際の IDA スクリーンショットを
+収集して、PaperJSX または Markdown で証拠等級付きレポートを生成します。
+
+**Español** - `rea-vm` es la capa de interfaz de VM para REA. Conecta el
+análisis estático de REA con una máquina virtual autorizada, recopila evidencia
+dinámica y capturas reales de IDA, y genera un informe clasificado mediante
+PaperJSX o Markdown.
+
 The repository ships as an Agent Skill: `SKILL.md` is the entry point, the
 `scripts/` and `references/` directories carry the runtime checks and
 operating contracts.
