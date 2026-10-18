@@ -4,6 +4,8 @@
 [![validate](https://github.com/bfssodifficult-design/rea-vm/actions/workflows/validate.yml/badge.svg)](https://github.com/bfssodifficult-design/rea-vm/actions/workflows/validate.yml)
 [![release](https://img.shields.io/github/v/release/bfssodifficult-design/rea-vm)](https://github.com/bfssodifficult-design/rea-vm/releases)
 
+![rea-vm](assets/banner.png)
+
 `rea-vm` is the VM interface layer for REA. It gives an agent a controlled path
 from REA static analysis to an authorized virtual machine, dynamic evidence,
 IDA screenshots, and a structured report, without pretending that missing
