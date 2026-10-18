@@ -58,6 +58,20 @@ python scripts/preflight_check.py --config examples/example-config.yaml --json
 The probe is read-only and never prints secrets. Missing capabilities are
 reported as `unavailable` or `unknown`; they are not defaulted to success.
 
+## Publish
+
+GitHub CLI is expected at `D:\Tools\gh\bin\gh.exe` or on `PATH`.
+
+```powershell
+gh auth login
+git config --global user.name "<your name>"
+git config --global user.email "<your email>"
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\publish.ps1
+```
+
+The script creates a private repository named `rea-vm` and pushes `main`.
+Use `-Visibility public` only when the content is intended to be public.
+
 ## Structure
 
 ```text
@@ -73,6 +87,7 @@ references/
 scripts/
   preflight_check.py
   preflight_check.ps1
+  publish.ps1
 templates/
   experiment-report.md
 examples/
