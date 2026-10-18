@@ -9,6 +9,23 @@ The repository ships as an Agent Skill: `SKILL.md` is the entry point, the
 `scripts/` and `references/` directories carry the runtime checks and
 operating contracts.
 
+## Interface contract
+
+`rea-vm` exposes four explicit contracts:
+
+1. **Connection** - `vm.host`, `vm.user`, `vm.key`, optional `vm.vmx` and
+   snapshot. Values come from configuration or the user; there are no hidden
+   defaults for hosts, accounts, or keys.
+2. **Capability** - `scripts/preflight_check.py --json` reports
+   `supported`, `unsupported`, `unavailable`, or `unknown` for each dependency.
+3. **Execution** - SSH/SFTP actions carry timeouts, exit-status checks, file
+   hashes, and cleanup; complex commands run as uploaded scripts.
+4. **Evidence and report** - a normalized evidence tree, real screenshots
+   where available, and PaperJSX or Markdown output with explicit provenance.
+
+The interface never invents a connection, never silently drops a blocked
+stage, and never claims a report engine that did not run.
+
 ## What it covers
 
 - REA provider discovery and static analysis
