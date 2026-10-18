@@ -40,7 +40,7 @@ jobs:
       - name: Secret and PII scan
         run: |
           if grep -RInE 'gho_[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|github_pat_|BEGIN (RSA|OPENSSH) PRIVATE KEY' \
-              --exclude-dir=.git .; then
+              --exclude-dir=.git --exclude=validate.yml .; then
             echo "potential secret found"
             exit 1
           fi
