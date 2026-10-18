@@ -1,0 +1,7 @@
+interface:
+  display_name: "rea-vm"
+  short_description: "REA static analysis to authorized VM evidence and reports"
+  default_prompt: "Use $rea-vm to run an authorized REA + VM analysis with graded evidence and a structured report."
+
+policy:
+  allow_implicit_invocation: false

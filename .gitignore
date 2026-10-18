@@ -1,0 +1,21 @@
+# Local evidence and secrets
+evidence/
+*.pem
+*.key
+*.ppk
+*_ed25519
+*.dump
+*.dmp
+*.vmem
+*.vmsn
+
+# Temporary tool output
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+
+# Generated reports (opt-in)
+report/*.pdf
+report/*.docx
+report/*.pptx

@@ -1,0 +1,24 @@
+# Example only. Replace every value; none of these are defaults.
+target:
+  path: /path/to/sample
+  sha256: "0000000000000000000000000000000000000000000000000000000000000000"
+  goal: "Determine whether the sample performs <behavior>."
+
+vm:
+  host: 192.0.2.10          # documentation address, not a real target
+  user: analyst
+  key: ~/.ssh/analysis_key
+  vmx: /path/to/vm.vmx
+  snapshot: pre-analysis
+
+evidence:
+  root: ./evidence
+
+report:
+  format: markdown          # markdown | paperjsx-pdf | paperjsx-docx
+  title: "Analysis Report"
+
+limits:
+  command_timeout_seconds: 120
+  analysis_timeout_seconds: 900
+  max_dump_bytes: 67108864
