@@ -7,23 +7,13 @@ tools worked.
 
 ## Overview / 简介
 
-**English** - `rea-vm` is the VM interface layer for REA. It connects REA
-static analysis to an authorized virtual machine, captures dynamic evidence
-and real IDA screenshots, and produces a graded report through PaperJSX or
-Markdown.
+**English** - `rea-vm` is an AI Agent Skill for VM-assisted reverse engineering with REA. It guides the agent through connecting REA static analysis with an authorized virtual machine, collecting and verifying dynamic evidence and genuine IDA screenshots, and producing evidence-graded reports using PaperJSX or Markdown, subject to the available tools and environment.
 
-**中文** - `rea-vm` 是 REA 的虚拟机接口层。它把 REA 静态分析接到授权的
-虚拟机上，采集动态证据和真实的 IDA 截图，并通过 PaperJSX 或 Markdown
-生成分级报告。
+**中文** - `rea-vm` 是一个用于 REA 虚拟机辅助逆向分析的 AI Agent Skill。它指导 Agent 将 REA 静态分析与授权的虚拟机环境相结合，采集并核验动态分析证据和真实的 IDA 截图，并根据可用工具和运行环境，通过 PaperJSX 或 Markdown 生成带有证据等级标注的分析报告。
 
-**日本語** - `rea-vm` は REA の VM インターフェース層です。REA の静的解析を
-許可された仮想マシンに接続し、動的証拠と実際の IDA スクリーンショットを
-収集して、PaperJSX または Markdown で証拠等級付きレポートを生成します。
+**日本語** - `rea-vm` は、REA を用いた仮想マシン支援型リバースエンジニアリングのための AI Agent Skill です。利用可能なツールと実行環境に応じて、REA の静的解析と許可された仮想マシン環境を連携させ、動的解析の証拠と実際の IDA スクリーンショットの収集・検証を支援し、PaperJSX または Markdown による証拠レベル付きレポートの作成をガイドします。
 
-**Español** - `rea-vm` es la capa de interfaz de VM para REA. Conecta el
-análisis estático de REA con una máquina virtual autorizada, recopila evidencia
-dinámica y capturas reales de IDA, y genera un informe clasificado mediante
-PaperJSX o Markdown.
+**Español** - `rea-vm` es una Skill para agentes de IA orientada al análisis inverso asistido por máquinas virtuales con REA. Guía al agente para integrar el análisis estático de REA con una máquina virtual autorizada, recopilar y verificar evidencias dinámicas y capturas reales de IDA, y elaborar informes con niveles de evidencia mediante PaperJSX o Markdown, según las herramientas y el entorno disponibles.
 
 The repository ships as an Agent Skill: `SKILL.md` is the entry point, the
 `scripts/` and `references/` directories carry the runtime checks and
